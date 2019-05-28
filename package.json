@@ -1,0 +1,24 @@
+{
+  "name": "harald",
+  "version": "0.0.1",
+  "description": "Response & Error Handler for Koa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zjr/harald.git"
+  },
+  "keywords": [
+    "koa",
+    "response",
+    "error"
+  ],
+  "author": "Zachary J. Rollyson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zjr/harald/issues"
+  },
+  "homepage": "https://github.com/zjr/harald#readme"
+}
