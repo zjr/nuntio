@@ -1,12 +1,12 @@
 class Nuntio {
   constructor(message, data, page) {
-    if (typeof message !== "string") {
+    if (typeof message !== 'string') {
       [data, page, message] = [message, data, page];
     }
 
     this.data = data;
     this.page = page;
-    this.message = message || "OK";
+    this.message = message || 'OK';
     this.statusCode = 200;
   }
 
@@ -57,7 +57,7 @@ class Nuntio {
   static assert(val, error) {
     if (!!val) return;
 
-    if (typeof error === "function") {
+    if (typeof error === 'function') {
       error = error();
     }
 
@@ -73,7 +73,7 @@ class Nuntio {
 
     options = options || {};
 
-    options.expose = options.expose || process.env.NODE_ENV === "development";
+    options.expose = options.expose || process.env.NODE_ENV === 'development';
 
     const nuntio = new Nuntio(message, options.expose && { original: error });
 
@@ -92,7 +92,7 @@ class Nuntio {
     return nuntio;
   }
 
-  static unauthorized(message = "unauthorized", options) {
+  static unauthorized(message = 'unauthorized', options) {
     return Nuntio.error(message, { statusCode: 401, ...options });
   }
 }
