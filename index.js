@@ -1,21 +1,55 @@
+const qs = require('querystring');
+
 class Nuntio {
-  constructor(message, data, page) {
+  constructor(message, data, page, ctx) {
     if (typeof message !== 'string') {
       [data, page, message] = [message, data, page];
     }
+
+    page && (page.limit = page.limit && parseInt(page.limit));
+    page && (page.offset = page.offset && parseInt(page.offset));
 
     this.data = data;
     this.page = page;
     this.message = message || 'OK';
     this.statusCode = 200;
+
+    this.ctx = ctx;
   }
 
   toJSON() {
     return {
       statusCode: this.statusCode,
       message: this.message,
-      page: this.page,
+      page: this.constructPage(),
       data: this.data
+    };
+  }
+
+  constructUrl(query) {
+    const ctx = this.ctx;
+    return `${ctx.protocol}://${ctx.host}${ctx.path}?${qs.stringify(query)}`;
+  }
+
+  constructPage() {
+    if (!this.page || typeof this.page !== 'object' || !this.page.count) return;
+
+    let prevOffset, nextOffset;
+    const { query } = this.ctx;
+    const { offset, limit, count } = this.page;
+
+    if (offset > 0) {
+      prevOffset = Math.max(0, offset - limit);
+    }
+
+    if (count > offset + limit) {
+      nextOffset = offset + limit;
+    }
+
+    return {
+      ...this.page,
+      prev: isFinite(prevOffset) && this.constructUrl({ ...query, limit, offset: prevOffset }),
+      next: isFinite(nextOffset) && this.constructUrl({ ...query, limit, offset: nextOffset })
     };
   }
 
@@ -36,7 +70,7 @@ class Nuntio {
     return async function NuntioMiddleware(ctx, next) {
       try {
         await next();
-        ctx.body = new Nuntio(ctx.message, ctx.body, ctx.page);
+        ctx.body = new Nuntio(ctx.message, ctx.body, ctx.page, ctx).toJSON();
       } catch (error) {
         if (error instanceof Nuntio) {
           error.updateCtxWithError(ctx);
