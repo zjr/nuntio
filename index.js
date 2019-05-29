@@ -19,17 +19,31 @@ class Nuntio {
     };
   }
 
-  static middleware() {
+  updateCtxWithError(ctx) {
+    ctx.status = this.statusCode;
+    ctx.body = this;
+  }
+
+  /**
+   * @param {object} [opts={}] - configure middlewar
+   * @param [opts.catchAll=false] - catch non-Nutio errors
+   * @param [opts.expose=false] - pass error info to client
+   * @return {function}
+   */
+  static middleware(opts = {}) {
+    opts = { catchAll: false, expose: false, ...opts };
+
     return async function NuntioMiddleware(ctx, next) {
       try {
         await next();
         ctx.body = new Nuntio(ctx.message, ctx.body, ctx.page);
-      } catch (e) {
-        if (e instanceof Nuntio) {
-          ctx.status = e.statusCode;
-          ctx.body = e;
+      } catch (error) {
+        if (error instanceof Nuntio) {
+          error.updateCtxWithError(ctx);
+        } else if (opts.catchAll) {
+          Nuntio.error(error.message, error, opts).updateCtxWithError(ctx);
         } else {
-          throw e;
+          throw error;
         }
       }
     };
