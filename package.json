@@ -1,5 +1,5 @@
 {
-  "name": "harald",
+  "name": "nuntio",
   "version": "0.1.0",
   "description": "Response & Error Handler for Koa",
   "main": "index.js",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zjr/harald.git"
+    "url": "git+https://github.com/zjr/nuntio.git"
   },
   "keywords": [
     "koa",
@@ -25,9 +25,9 @@
   "author": "Zachary J. Rollyson",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zjr/harald/issues"
+    "url": "https://github.com/zjr/nuntio/issues"
   },
-  "homepage": "https://github.com/zjr/harald#readme",
+  "homepage": "https://github.com/zjr/nuntio#readme",
   "devDependencies": {
     "@commitlint/cli": "^7.6.1",
     "husky": "^2.3.0",

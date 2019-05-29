@@ -1,4 +1,4 @@
-class Harald {
+class Nuntio {
   constructor(message, data, page) {
     if (typeof message !== "string") {
       [data, page, message] = [message, data, page];
@@ -20,12 +20,12 @@ class Harald {
   }
 
   static middleware() {
-    return async function HaraldMiddleware(ctx, next) {
+    return async function NuntioMiddleware(ctx, next) {
       try {
         await next();
-        ctx.body = new Harald(ctx.message, ctx.body, ctx.page);
+        ctx.body = new Nuntio(ctx.message, ctx.body, ctx.page);
       } catch (e) {
-        if (e instanceof Harald) {
+        if (e instanceof Nuntio) {
           ctx.status = e.statusCode;
           ctx.body = e;
         } else {
@@ -61,26 +61,26 @@ class Harald {
 
     options.expose = options.expose || process.env.NODE_ENV === "development";
 
-    const harald = new Harald(message, options.expose && { original: error });
+    const nuntio = new Nuntio(message, options.expose && { original: error });
 
     if (!error) {
       error = new Error();
-      Error.captureStackTrace(error, Harald);
+      Error.captureStackTrace(error, Nuntio);
     }
 
     const { statusCode = 500, ...restOpts } = options;
 
-    harald.error = error;
-    harald.data = { original: error };
-    harald.options = restOpts;
-    harald.statusCode = statusCode;
+    nuntio.error = error;
+    nuntio.data = { original: error };
+    nuntio.options = restOpts;
+    nuntio.statusCode = statusCode;
 
-    return harald;
+    return nuntio;
   }
 
   static unauthorized(message = "unauthorized", options) {
-    return Harald.error(message, { statusCode: 401, ...options });
+    return Nuntio.error(message, { statusCode: 401, ...options });
   }
 }
 
-module.exports = Harald;
+module.exports = Nuntio;

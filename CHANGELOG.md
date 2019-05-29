@@ -6,8 +6,8 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Build System
 
-* add commitlint, prettier & standard-version ([252f071](https://github.com/zjr/harald/commit/252f071))
+* add commitlint, prettier & standard-version ([252f071](https://github.com/zjr/nuntio/commit/252f071))
 
 ### Features
 
-* initial commit for harald in index.js ([480de72](https://github.com/zjr/harald/commit/480de72))
+* initial commit for nuntio in index.js ([480de72](https://github.com/zjr/nuntio/commit/480de72))
