@@ -4,17 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## 0.2.0 (2019-05-29)
 
+### Refactor
 
-### Build System
-
-* add commitlint, prettier & standard-version ([252f071](https://github.com/zjr/nuntio/commit/252f071))
-
-
-### Features
-
-* initial commit for harald in index.js ([480de72](https://github.com/zjr/nuntio/commit/480de72))
-
-
+* rename harald as nuntio ([fc24952](https://github.com/zjr/nuntio/commit/fc24952))
 
 ## 0.1.0 (2019-05-28)
 
@@ -24,4 +16,4 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* initial commit for nuntio in index.js ([480de72](https://github.com/zjr/nuntio/commit/480de72))
+* initial commit for harald in index.js ([480de72](https://github.com/zjr/nuntio/commit/480de72))
