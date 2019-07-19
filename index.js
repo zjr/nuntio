@@ -6,6 +6,7 @@ class Nuntio {
       [data, page, message] = [message, data, page];
     }
 
+    page && (page.page = page.page && parseInt(page.page));
     page && (page.limit = page.limit && parseInt(page.limit));
     page && (page.offset = page.offset && parseInt(page.offset));
 
@@ -34,22 +35,33 @@ class Nuntio {
   constructPage() {
     if (!this.page || typeof this.page !== 'object' || !this.page.count) return;
 
-    let prevOffset, nextOffset;
+    let prevPage, nextPage, prevOffset, nextOffset;
+    let { page, offset, limit, count } = this.page;
+
     const { query } = this.ctx;
-    const { offset, limit, count } = this.page;
+
+    if (!offset && isFinite(page)) {
+      offset = page * limit;
+    }
 
     if (offset > 0) {
+      prevPage = page - 1;
       prevOffset = Math.max(0, offset - limit);
     }
 
     if (count > offset + limit) {
+      nextPage = page + 1;
       nextOffset = offset + limit;
     }
 
     return {
       ...this.page,
-      prev: isFinite(prevOffset) && this.constructUrl({ ...query, limit, offset: prevOffset }),
-      next: isFinite(nextOffset) && this.constructUrl({ ...query, limit, offset: nextOffset })
+      prev:
+        isFinite(prevOffset) &&
+        this.constructUrl({ ...query, limit, page: prevPage, offset: prevOffset }),
+      next:
+        isFinite(nextOffset) &&
+        this.constructUrl({ ...query, limit, page: nextPage, offset: nextOffset })
     };
   }
 
