@@ -74,10 +74,11 @@ class Nuntio {
    * @param {object} [opts={}] - configure middlewar
    * @param [opts.catchAll=false] - catch non-Nutio errors
    * @param [opts.expose=false] - pass error info to client
+   * @param [opts.log=true] - log caught exceptions
    * @return {function}
    */
   static middleware(opts = {}) {
-    opts = { catchAll: false, expose: false, ...opts };
+    opts = { catchAll: false, expose: false, log: true, ...opts };
 
     return async function NuntioMiddleware(ctx, next) {
       try {
@@ -87,6 +88,7 @@ class Nuntio {
         if (error instanceof Nuntio) {
           error.updateCtxWithError(ctx);
         } else if (opts.catchAll) {
+          if (opts.log) console.error(error);
           Nuntio.error(error.message, error, opts).updateCtxWithError(ctx);
         } else {
           throw error;
