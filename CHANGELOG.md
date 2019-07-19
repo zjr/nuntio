@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.7.0](https://github.com/zjr/nuntio/compare/v0.6.0...v0.7.0) (2019-07-19)
+
+
+### Features
+
+* default enabled middleware option to log caught exceptions ([d06a063](https://github.com/zjr/nuntio/commit/d06a063))
+* handle page counts ([d5f5231](https://github.com/zjr/nuntio/commit/d5f5231))
+
+
+
 ## [0.6.0](https://github.com/zjr/nuntio/compare/v0.5.0...v0.6.0) (2019-05-31)
 
 
