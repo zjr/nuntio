@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.8.0](https://github.com/zjr/nuntio/compare/v0.7.0...v0.8.0) (2019-09-06)
+
+
+### Features
+
+* only use middleware to wrap success body for JSON responses ([7bf9769](https://github.com/zjr/nuntio/commit/7bf9769))
+
+
+
 ## [0.7.0](https://github.com/zjr/nuntio/compare/v0.6.0...v0.7.0) (2019-07-19)
 
 
