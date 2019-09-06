@@ -83,7 +83,9 @@ class Nuntio {
     return async function NuntioMiddleware(ctx, next) {
       try {
         await next();
-        ctx.body = new Nuntio(ctx.message, ctx.body, ctx.page, ctx).toJSON();
+        if (ctx.type === 'application/json') {
+          ctx.body = new Nuntio(ctx.message, ctx.body, ctx.page, ctx).toJSON();
+        }
       } catch (error) {
         if (error instanceof Nuntio) {
           error.updateCtxWithError(ctx);
