@@ -99,8 +99,12 @@ class Nuntio {
     };
   }
 
-  static end(ctx, body) {
-    ctx.body = new Nuntio(ctx.message, body || ctx.body || null, ctx.page, ctx).toJSON();
+  static end(ctx, body, message) {
+    body = body || ctx.body || null;
+    message = message || ctx.message === 'Not Found' ? 'OK' : ctx.message;
+
+    ctx.body = new Nuntio(message, body, ctx.page, ctx).toJSON();
+
     ctx.state.nuntio_skip = true;
   }
 
