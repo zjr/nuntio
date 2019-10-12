@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.9.1](https://github.com/zjr/nuntio/compare/v0.9.0...v0.9.1) (2019-10-12)
+
+
+### Bug Fixes
+
+* skip nuntio wrapper during end ([6dbc4dd](https://github.com/zjr/nuntio/commit/6dbc4dd))
+
+
+
 ## [0.9.0](https://github.com/zjr/nuntio/compare/v0.8.0...v0.9.0) (2019-10-12)
 
 
