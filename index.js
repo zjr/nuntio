@@ -100,7 +100,7 @@ class Nuntio {
   }
 
   static end(ctx, body) {
-    ctx.body = new Nuntio(ctx.message, ctx.body || body, ctx.page, ctx).toJSON();
+    ctx.body = new Nuntio(ctx.message, body || ctx.body || null, ctx.page, ctx).toJSON();
     ctx.state.nuntio_skip = true;
   }
 
