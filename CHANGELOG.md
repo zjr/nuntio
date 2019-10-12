@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.11.1](https://github.com/zjr/nuntio/compare/v0.11.0...v0.11.1) (2019-10-12)
+
+
+### Bug Fixes
+
+* better message support for Nuntio.end() ([dad45b5](https://github.com/zjr/nuntio/commit/dad45b5))
+
+
+
 ## [0.11.0](https://github.com/zjr/nuntio/compare/v0.10.0...v0.11.0) (2019-10-12)
 
 
