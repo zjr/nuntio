@@ -83,7 +83,7 @@ class Nuntio {
     return async function NuntioMiddleware(ctx, next) {
       try {
         await next();
-        if (ctx.type === 'application/json') {
+        if (ctx.type === 'application/json' && !ctx.state.nuntio_skip) {
           ctx.body = new Nuntio(ctx.message, ctx.body, ctx.page, ctx).toJSON();
         }
       } catch (error) {
@@ -101,6 +101,7 @@ class Nuntio {
 
   static end(ctx) {
     ctx.body = new Nuntio(ctx.message, ctx.body, ctx.page, ctx).toJSON();
+    ctx.state.nuntio_skip = true;
   }
 
   /**
