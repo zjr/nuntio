@@ -99,6 +99,10 @@ class Nuntio {
     };
   }
 
+  static end(ctx) {
+    ctx.body = new Nuntio(ctx.message, ctx.body, ctx.page, ctx).toJSON();
+  }
+
   /**
    * Check if val evaluates to true, otherwise throw supplied error.
    * @param {*} val - value to check if true
