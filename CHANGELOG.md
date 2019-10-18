@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.12.0](https://github.com/zjr/nuntio/compare/v0.11.1...v0.12.0) (2019-10-18)
+
+
+### Features
+
+* support calling Nuntio.error w/ status code only ([7b45441](https://github.com/zjr/nuntio/commit/7b45441))
+
+
+
 ### [0.11.1](https://github.com/zjr/nuntio/compare/v0.11.0...v0.11.1) (2019-10-12)
 
 
