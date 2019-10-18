@@ -132,6 +132,11 @@ class Nuntio {
 
     options = options || {};
 
+    // Support calling with statusCode only;
+    if (typeof options === 'number') {
+      options = { statusCode: options };
+    }
+
     options.expose = options.expose || process.env.NODE_ENV === 'development';
 
     const nuntio = new Nuntio(message, options.expose && { original: error });
