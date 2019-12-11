@@ -1,6 +1,6 @@
 {
   "name": "nuntio",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "description": "Response & Error Handler for Koa",
   "main": "index.js",
   "scripts": {

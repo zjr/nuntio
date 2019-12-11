@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.13.0](https://github.com/zjr/nuntio/compare/v0.12.0...v0.13.0) (2019-12-11)
+
+
+### Bug Fixes
+
+* add default error message ([0e24748](https://github.com/zjr/nuntio/commit/0e24748))
+
+
+### Build System
+
+* **deps:** bump lodash.template from 4.4.0 to 4.5.0 ([493bd4b](https://github.com/zjr/nuntio/commit/493bd4b))
+
+
+### Features
+
+* add toJSON method to nuntio errors ([3b49d18](https://github.com/zjr/nuntio/commit/3b49d18))
+
+
+
 ## [0.12.0](https://github.com/zjr/nuntio/compare/v0.11.1...v0.12.0) (2019-10-18)
 
 
