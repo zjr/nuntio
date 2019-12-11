@@ -131,6 +131,7 @@ class Nuntio {
     }
 
     options = options || {};
+    message = message || 'Internal Server Error';
 
     // Support calling with statusCode only;
     if (typeof options === 'number') {
