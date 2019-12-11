@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.13.2](https://github.com/zjr/nuntio/compare/v0.13.1...v0.13.2) (2019-12-11)
+
+
+### Bug Fixes
+
+* log all errors when option enabled ([1d82915](https://github.com/zjr/nuntio/commit/1d82915))
+
+
+
 ### [0.13.1](https://github.com/zjr/nuntio/compare/v0.13.0...v0.13.1) (2019-12-11)
 
 
