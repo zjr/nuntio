@@ -154,6 +154,18 @@ class Nuntio {
     nuntio.options = restOpts;
     nuntio.statusCode = statusCode;
 
+    if (nuntio.error instanceof Error && !('toJSON' in nuntio.error)) {
+      nuntio.error.toJSON = function toJSON() {
+        const alt = {};
+
+        Object.getOwnPropertyNames(this).forEach(function(key) {
+          alt[key] = this[key];
+        }, this);
+
+        return alt;
+      };
+    }
+
     return nuntio;
   }
 
