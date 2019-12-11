@@ -87,10 +87,11 @@ class Nuntio {
           ctx.body = new Nuntio(ctx.message, ctx.body, ctx.page, ctx).toJSON();
         }
       } catch (error) {
+        if (opts.log) console.error(error);
+
         if (error instanceof Nuntio) {
           error.updateCtxWithError(ctx);
         } else if (opts.catchAll) {
-          if (opts.log) console.error(error);
           Nuntio.error(error.message, error, opts).updateCtxWithError(ctx);
         } else {
           throw error;
