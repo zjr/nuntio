@@ -29,7 +29,7 @@ class Nuntio {
 
   constructUrl(query) {
     const ctx = this.ctx;
-    return `${ctx.protocol}://${ctx.host}${ctx.path}?${qs.stringify(query)}`;
+    return `/${ctx.path}?${qs.stringify(query)}`;
   }
 
   constructPage() {
