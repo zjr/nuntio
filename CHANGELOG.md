@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.14.0](https://github.com/zjr/nuntio/compare/v0.13.2...v0.14.0) (2020-03-08)
+
+
+### Features
+
+* return relative URLs for better linking ([059b6a0](https://github.com/zjr/nuntio/commit/059b6a0))
+
+
+
 ### [0.13.2](https://github.com/zjr/nuntio/compare/v0.13.1...v0.13.2) (2019-12-11)
 
 
