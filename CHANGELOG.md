@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.15.0](https://github.com/zjr/nuntio/compare/v0.13.2...v0.15.0) (2020-03-08)
+
+
+### Build System
+
+* **deps:** bump handlebars from 4.1.2 to 4.5.3 ([ad27504](https://github.com/zjr/nuntio/commit/ad27504))
+
+
+### Features
+
+* return relative URLs for better linking ([6f0007c](https://github.com/zjr/nuntio/commit/6f0007c))
+
+
+
 ## [0.14.0](https://github.com/zjr/nuntio/compare/v0.13.2...v0.14.0) (2020-03-08)
 
 
