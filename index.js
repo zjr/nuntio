@@ -63,12 +63,12 @@ class Nuntio {
       prev: isFinite(prevOffset) && {
         url: this.constructUrl(prevPageQuery),
         query: prevPageQuery,
-        queryString: qs.stringify(prevPageQuery)
+        queryString: '?' + qs.stringify(prevPageQuery)
       },
       next: isFinite(nextOffset) && {
         url: this.constructUrl(nextPageQuery),
         query: nextPageQuery,
-        queryString: qs.stringify(nextPageQuery)
+        queryString: '?' + qs.stringify(nextPageQuery)
       }
     };
   }
