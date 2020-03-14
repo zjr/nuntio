@@ -29,7 +29,7 @@ class Nuntio {
 
   constructUrl(query) {
     const ctx = this.ctx;
-    return `/${ctx.path}?${qs.stringify(query)}`;
+    return `${ctx.path}?${qs.stringify(query)}`;
   }
 
   constructPage() {
@@ -54,14 +54,22 @@ class Nuntio {
       nextOffset = offset + limit;
     }
 
+    const pageQuery = { ...query, limit };
+    const prevPageQuery = { ...pageQuery, page: prevPage, offset: prevOffset };
+    const nextPageQuery = { ...pageQuery, page: nextPage, offset: nextOffset };
+
     return {
       ...this.page,
-      prev:
-        isFinite(prevOffset) &&
-        this.constructUrl({ ...query, limit, page: prevPage, offset: prevOffset }),
-      next:
-        isFinite(nextOffset) &&
-        this.constructUrl({ ...query, limit, page: nextPage, offset: nextOffset })
+      prev: isFinite(prevOffset) && {
+        url: this.constructUrl(prevPageQuery),
+        query: prevPageQuery,
+        queryString: qs.stringify(prevPageQuery)
+      },
+      next: isFinite(nextOffset) && {
+        url: this.constructUrl(nextPageQuery),
+        query: nextPageQuery,
+        queryString: qs.stringify(nextPageQuery)
+      }
     };
   }
 

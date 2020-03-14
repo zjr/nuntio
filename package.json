@@ -32,11 +32,11 @@
   },
   "homepage": "https://github.com/zjr/nuntio#readme",
   "devDependencies": {
-    "@commitlint/cli": "^8.2.0",
-    "husky": "^2.3.0",
-    "prettier": "^1.17.1",
-    "pretty-quick": "^1.11.0",
-    "standard-version": "^6.0.1"
+    "@commitlint/cli": "^8.3.5",
+    "husky": "^4.2.3",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
+    "standard-version": "^7.1.0"
   },
   "peerDependencies": {
     "koa": "2.x"
