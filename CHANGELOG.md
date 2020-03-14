@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.16.0](https://github.com/zjr/nuntio/compare/v0.15.0...v0.16.0) (2020-03-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* page.{prev,next} type has changed from string to object w/ shape `{ url, query, queryString }`
+
+### Features
+
+* return url, query & queryString for page.{prev,next} ([521945b](https://github.com/zjr/nuntio/commit/521945bf63e5dc25675d8e4ebc5ea6523f220375))
+
 ## [0.15.0](https://github.com/zjr/nuntio/compare/v0.13.2...v0.15.0) (2020-03-08)
 
 
