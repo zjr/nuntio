@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.16.3](https://github.com/zjr/nuntio/compare/v0.16.2...v0.16.3) (2020-05-14)
+
 ### [0.16.2](https://github.com/zjr/nuntio/compare/v0.16.1...v0.16.2) (2020-05-14)
 
 
