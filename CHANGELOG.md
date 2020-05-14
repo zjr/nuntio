@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.16.2](https://github.com/zjr/nuntio/compare/v0.16.1...v0.16.2) (2020-05-14)
+
+
+### Bug Fixes
+
+* skip Nuntio processing for streams ([5b5478b](https://github.com/zjr/nuntio/commit/5b5478b7c46e65355139bb5c83c6b0da00940cea))
+
 ### [0.16.1](https://github.com/zjr/nuntio/compare/v0.16.0...v0.16.1) (2020-03-14)
 
 
