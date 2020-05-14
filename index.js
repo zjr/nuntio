@@ -1,4 +1,5 @@
 const qs = require('querystring');
+const stream = require('stream');
 
 class Nuntio {
   constructor(message, data, page, ctx) {
@@ -91,7 +92,11 @@ class Nuntio {
     return async function NuntioMiddleware(ctx, next) {
       try {
         await next();
-        if (ctx.type === 'application/json' && !ctx.state.nuntio_skip) {
+        if (
+          ctx.type === 'application/json' &&
+          !ctx.state.nuntio_skip &&
+          !(ctx.body instanceof stream)
+        ) {
           ctx.body = new Nuntio(ctx.message, ctx.body, ctx.page, ctx).toJSON();
         }
       } catch (error) {
